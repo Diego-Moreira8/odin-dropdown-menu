@@ -1,0 +1,47 @@
+:root {
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #000;
+  padding: 32px 64px;
+  color: #fff;
+}
+
+nav a,
+nav li {
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#nav-menus {
+  display: flex;
+  gap: 64px;
+}
+
+#nav-menus > div {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+}
+
+.dropdown-menu {
+  display: none;
+  background-color: #555;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.visible {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+  position: absolute;
+  top: 60px;
+}
+
+#nav-menus li:hover,
+#nav-menus a:hover {
+  color: rgb(255, 169, 169);
+}
