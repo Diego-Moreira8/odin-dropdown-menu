@@ -42,12 +42,16 @@ header {
 
 .dropdown-menu:hover,
 #login-button:hover,
+.submenu-link:hover,
 .submenu-link a:hover,
 .login-container button:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
 .dropdown-container {
+  opacity: 0;
+  pointer-events: none;
+
   background-color: #333;
   box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.25);
   position: absolute;
@@ -55,10 +59,16 @@ header {
   padding: 8px 0;
 }
 
+.dropdown-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .submenu-link a {
   display: block;
   color: #fff;
   padding: 8px 32px;
+  cursor: pointer;
 }
 
 #login-button {
