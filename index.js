@@ -7,10 +7,20 @@ document
   .addEventListener("mouseover", toggleDropdown);
 
 function toggleDropdown(e) {
-  const el = e.target.parentElement.querySelector(".dropdown-container");
-  el.classList.add("active");
-  el.addEventListener("mouseleave", () => el.classList.remove("active"));
-  e.target.parentElement.addEventListener("mouseleave", () =>
-    el.classList.remove("active")
+  const menuBtn = e.target;
+  const dropdownContainer = menuBtn.parentElement.querySelector(
+    ".dropdown-container"
+  );
+
+  menuBtn.classList.add("active");
+  dropdownContainer.classList.add("active");
+
+  menuBtn.parentElement.addEventListener("mouseleave", () => {
+    dropdownContainer.classList.remove("active");
+    menuBtn.classList.remove("active");
+  });
+
+  dropdownContainer.addEventListener("mouseleave", () =>
+    dropdownContainer.classList.remove("active")
   );
 }
